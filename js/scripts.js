@@ -1,5 +1,10 @@
 var toPigLatin = function(sentence) {
-  return false;
+  var letters = /^[A-Za-z]+$/;
+  if (sentence.match(letters)) {
+    return true;
+  } else {
+    return sentence;
+  }
 };
 
 
