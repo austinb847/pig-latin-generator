@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="../bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="../jquery-3.4.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Pig Latin Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Pig Latin Word Generator</h1>
+      </div>
+      <form id="pig-latin">
+        <div class="form-group">
+          <label for="userSentence">Fill out a random sentence:</label>
+          <textarea class="form-control" id="userSentence" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Generate Pig Latin</button>
+      </form>
+      <div id="result">
+        <p><span class="originalSentence"></span> <strong>translates to:</strong></p>
+        <p class="generatedSentence"></p>
+      </div>
+    </div>
+  </body>
+</html>
