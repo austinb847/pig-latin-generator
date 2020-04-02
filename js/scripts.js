@@ -6,12 +6,22 @@ var toPigLatin = function(sentence) {
     var words = sentence.split(' ');
     var generatedPigLatin = []; 
     var consonents = /^[bcdfghjklmnpqrstvwxyz].*/i;
+    var vowels = /^[aeiou].*/i;
     words.forEach(function(word) {
-      if (word.match(/^[aeiou].*/i)) {
+      if (word.match(vowels)) {
         generatedPigLatin.push(word + "ay");
       } else if (word.match(consonents)) {
-        var newWord = word.substring(1) + word.substring(0,1) + "ay";
-        generatedPigLatin.push(newWord);
+        var consChars = [];
+        for(i = 0; i < word.length; i++) {
+          if(word[i].match(consonents)) {
+            consChars.push(word[i]);
+          } else {
+            break
+          }
+        }
+        
+        /* var newWord = word.substring(1) + word.substring(0,1) + "ay";
+        generatedPigLatin.push(newWord); */
       } 
     })
     return generatedPigLatin.join(" "); 
@@ -34,3 +44,5 @@ $(document).ready(function() {
     $("#result").show();
   });
 });
+
+
