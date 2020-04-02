@@ -4,11 +4,17 @@ var toPigLatin = function(sentence) {
   
   if (noSpaceSentence.match(letters)) {
     var words = sentence.split(' ');
+    var generatedPigLatin = []; 
+    var consonents = /^[bcdfghjklmnpqrstvwxyz].*/i;
     words.forEach(function(word) {
       if (word.match(/^[aeiou].*/i)) {
-        console.log(word + "ay");
-      }
+        generatedPigLatin.push(word + "ay");
+      } else if (word.match(consonents)) {
+        var newWord = word.substring(1) + word.substring(0,1) + "ay";
+        generatedPigLatin.push(newWord);
+      } 
     })
+    return generatedPigLatin.join(" "); 
 
   } else {
     return sentence;
