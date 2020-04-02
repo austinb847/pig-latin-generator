@@ -19,7 +19,9 @@ var toPigLatin = function(sentence) {
             break
           }
         }
-        
+        var consStr = consChars.join("");
+        var newWord = word.substring(consChars.length) + consStr + "ay";
+        generatedPigLatin.push(newWord);
         /* var newWord = word.substring(1) + word.substring(0,1) + "ay";
         generatedPigLatin.push(newWord); */
       } 
