@@ -1,7 +1,11 @@
 var toPigLatin = function(sentence) {
   var letters = /^[A-Za-z]+$/;
-  if (sentence.match(letters)) {
-    return true;
+  var noSpaceSentence = sentence.replace(/ /g, '');
+  
+  if (noSpaceSentence.match(letters)) {
+    var words = sentence.split(' ');
+    console.log(words);
+
   } else {
     return sentence;
   }
