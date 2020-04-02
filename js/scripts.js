@@ -4,7 +4,11 @@ var toPigLatin = function(sentence) {
   
   if (noSpaceSentence.match(letters)) {
     var words = sentence.split(' ');
-    console.log(words);
+    words.forEach(function(word) {
+      if (word.match(/^[aeiou].*/i)) {
+        console.log(word + "ay");
+      }
+    })
 
   } else {
     return sentence;
